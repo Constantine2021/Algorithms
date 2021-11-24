@@ -11,22 +11,21 @@ public class Quick {
 
     public static int partition(int[] values, int left, int right) {
         int x = values[right];
-        int less = left;
+        int marker = left;
         for (int i = left; i < right; i++) {
             if (values[i] <= x) {
-                if (i != less) {
+                if (i != marker) {
                     int temp = values[i];
-                    values[i] = values[less];
-                    values[less] = temp;
+                    values[i] = values[marker];
+                    values[marker] = temp;
                 }
-                ++less;
-
+                ++marker;
             }
         }
         int temp = values[right];
-        values[right] = values[less];
-        values[less] = temp;
-        return less;
+        values[right] = values[marker];
+        values[marker] = temp;
+        return marker;
     }
 
     public static void quickSort(int[] values, int left, int right) {
