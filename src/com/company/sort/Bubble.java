@@ -37,8 +37,8 @@ public class Bubble {
     }
 
     public static void bubbleSort(int length, int[] array) {
-        int numOfSwap = 0;
         for (int i = length - 1; i >= 0; i--) {
+            int numOfSwap = 0;
             for (int j = 0; j < i; j++) {
                 if (array[j] > array[j + 1]) {
                     int temp = array[j + 1];
