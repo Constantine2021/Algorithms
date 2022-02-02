@@ -13,16 +13,14 @@ public class Merge {
             mergeSort(values, buffer, mid + 1, right);
 
             int k = left;
-            // i - начало первой половины, j - начало второй половины
-            for (int i = left, j = mid + 1; i <= mid || j <= right; ) {
+            // i - beginning of the first half, j - of the second half
+            for (int i = left, j = mid + 1; i <= mid || j <= right; k++) {
                 if (j > right || (i <= mid && values[i] < values[j])) {
-                    buffer[k] = values[i];
-                    ++i;
+                    buffer[k] = values[i++];
                 } else {
-                    buffer[k] = values[j];
-                    ++j;
+                    buffer[k] = values[j++];
                 }
-                ++k;
+                //++k; - in for()
             }
             for (int i = left; i <= right; ++i) {
                 values[i] = buffer[i];
